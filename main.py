@@ -44,7 +44,7 @@ def add_user():
     _potencia = request.form['potencia']
     
     # validate the received values
-    if _name and _email and _password and request.method == 'POST':
+    if _nombre and _modelo and _categoria and _precio and _marca and _dimensiones and _material_que_procesa  and _operacion  and _vendedor and _potencia and request.method == 'POST':
         sql = "INSERT INTO public.maquinas(nombre, modelo, categoria,precio, marca, dimensiones, material_que_procesa, operacion,vendedor, potencia ) VALUES(%s, %s, %s, %s, %s , %s , %s , %s , %s , %s)"
         data = (_nombre, _modelo, _categoria,_precio, _marca, _dimensiones,_material_que_procesa, _operacion,_vendedor,_potencia)
         db_psql.commit()
@@ -77,17 +77,24 @@ def add_user():
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update_user(id):
     if request.method == 'GET':
-        [rslt] = db_psql.execute_query_with_param("select * from public.user where id = %s", (id,))
-        return render_template("add.html", rslt=rslt)
-    _name = request.form['name']
-    _email = request.form['email']
-    _password = request.form['pwd']
+     [rslt] = db_psql.execute_query_with_param("select * from public.maquinas where id = %s", (id,))
+     return render_template("add.html", rslt=rslt)
+    _nombre = request.form['nombre']
+    _modelo = request.form['modelo']
+    _categoria = request.form['categoria']
+    _precio = request.form['precio']
+    _marca = request.form['marca']
+    _dimensiones = request.form['dimensiones']
+    _material_que_procesa = request.form['material_que_procesa']
+    _operacion = request.form['operacion']
+    _vendedor = request.form['vendedor']
+    _potencia = request.form['potencia']
     # validate the received values
-    if _name and _email and _password and id and request.method == 'POST':
+    if _nombre and _modelo and _categoria and _precio and _marca and _dimensiones and _material_que_procesa  and _operacion  and _vendedor and _potencia and request.method == 'POST':
         #do not save password as a plain text
         # save edits
-        sql = "UPDATE public.user SET name=%s, email=%s, pwd=%s WHERE id=%s"
-        data = (_name, _email, _password, id,)
+        sql = "UPDATE public.maquinas SET nombre=%s, modelo=%s, categoria=%, precio=%s ,marca=%s ,dimensiones=%s ,material_que_procesa=%s ,operacion=%s ,vendedor=%s,potencia=%s  WHERE id=%s"
+        data = (_nombre, _modelo, _categoria,_precio, _marca, _dimensiones,_material_que_procesa, _operacion,_vendedor,_potencia)
         db_psql.execute_query_nr_with_param(sql, data)
         db_psql.commit()
         return redirect('/')
@@ -96,7 +103,7 @@ def update_user(id):
 
 @app.route('/delete/<int:id>', methods=['GET'])
 def delete_user(id):
-    db_psql.execute_query_nr_with_param("DELETE FROM public.user WHERE id=%s", (id,))
+    db_psql.execute_query_nr_with_param("DELETE FROM public.maquinas WHERE id=%s", (id,))
     db_psql.commit()
     return redirect('/')
 #

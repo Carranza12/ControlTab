@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User Details</title>
+    <title>Machine Details</title>
     <link rel="stylesheet" crossorigin="anonymous"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" >
     <script crossorigin="anonymous"
@@ -12,30 +12,47 @@
 <body>
 <div class="card">
     <div class="card-header">
-        User Details
+        Machine Details
     </div>
     <div class="card-body">
         <dl class="row">
             <dt class="col-sm-2">Id</dt>
             <dd class="col-sm-9">{{rslt[0]}}</dd>
 
-            <dt class="col-sm-2">Name:</dt>
+            <dt class="col-sm-2">nombre:</dt>
             <dd class="col-sm-9">{{rslt[1]}}</dd>
 
-            <dt class="col-sm-2 text-truncate">Email:</dt>
+            <dt class="col-sm-2 text-truncate">modelo:</dt>
             <dd class="col-sm-9">{{rslt[2]}}</dd>
 
-            <dt class="col-sm-2 text-truncate">Password:</dt>
+            <dt class="col-sm-2 text-truncate">categoria:</dt>
             <dd class="col-sm-9">{{rslt[3]}}</dd>
 
-            <img  src="data:image/jpeg;base64,{{rslt[4]}}" style="width:400px;" >
+            <dt class="col-sm-2 text-truncate">categoria:</dt>
+            <dd class="col-sm-9">{{rslt[4]}}</dd>
+            <dt class="col-sm-2 text-truncate">precio:</dt>
+            <dd class="col-sm-9">{{rslt[5]}}</dd>
+            <dt class="col-sm-2 text-truncate">narca:</dt>
+            <dd class="col-sm-9">{{rslt[6]}}</dd>
+            <dt class="col-sm-2 text-truncate">dimensiones:</dt>
+            <dd class="col-sm-9">{{rslt[7]}}</dd>
+            <dt class="col-sm-2 text-truncate">material que procesa:</dt>
+            <dd class="col-sm-9">{{rslt[8]}}</dd>
+            <dt class="col-sm-2 text-truncate">operacion:</dt>
+            <dd class="col-sm-9">{{rslt[9]}}</dd>
+            <dt class="col-sm-2 text-truncate">vendedor:</dt>
+            <dd class="col-sm-9">{{rslt[10]}}</dd>
+            <dt class="col-sm-2 text-truncate">potencia:</dt>
+            <dd class="col-sm-9">{{rslt[11]}}</dd>
+            
+            
         </dl>
     </div>
     <div class="card-footer text-muted">
-        <a class="btn btn-primary me-2" href="/add">Add User</a>
-        <a class="btn btn-primary me-2" href="/update/{{rslt[0]}}">Update User</a>
-        <a class="btn btn-primary me-2" href="/delete/{{rslt[0]}}">Delete User</a>
-        <a class="btn btn-primary me-2" href="/">Back to User List</a>
+        <a class="btn btn-success me-2" href="/add">Add Machine</a>
+        <a class="btn btn-primary me-2" href="/update/{{rslt[0]}}">Update Machine</a>
+        <a class="btn btn-danger me-2" href="/delete/{{rslt[0]}}">Delete Machine</a>
+        <a class="btn btn-warning me-2" href="/">Back to Machines List</a>
     </div>
 </div>
 </body>

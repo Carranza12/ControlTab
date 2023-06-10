@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <title>User Details</title>
+    <title>Machine Details</title>
     <link rel="stylesheet" crossorigin="anonymous"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" >
     <script crossorigin="anonymous"
@@ -10,28 +10,53 @@
 </head>
 
 <body>
-<h2>User Details</h2>
+<h2>Machine Details</h2>
 
 <form action="" method = "POST">
     <div class="form-group row">
-        <label for="name">Name </label>
+        <label for="nombre">nombre </label>
         <input type="hidden" class="form-control" name="id" id="id" value="{{rslt[0]}}">
-        <input type="text" class="form-control" name="name" id="name" value="{{rslt[1]}}">
+        <input type="text" class="form-control" name="nombre" id="nombre" value="{{rslt[1]}}">
     </div>
     <div class="form-group row">
-        <label for="email">Email </label>
-        <input type="text" class="form-control" name="email" id="email" value="{{rslt[2]}}">
+        <label for="modelo">modelo </label>
+        <input type="text" class="form-control" name="modelo" id="modelo" value="{{rslt[2]}}">
     </div>
     <div class="form-group row">
-        <label for="pwd">Passsword</label>
-        <input type="text" class="form-control" name="pwd" id="pwd" value="{{rslt[3]}}">
+        <label for="categoria">categoria</label>
+        <input type="text" class="form-control" name="categoria" id="categoria" value="{{rslt[3]}}">
     </div>
 
     <div class="form-group row">
-        <label for="pwd">Photo</label>
-        <textarea class="form-control" name="photo" id="photo" cols="30" rows="10" value="{{rslt[4]}}">{{rslt[4]}}</textarea>
+        <label for="precio">precio</label>
+        <input type="text" class="form-control" name="precio" id="precio" value="{{rslt[4]}}">
     </div>
-    <button type="btnAdd" class="btn btn-primary">Submit</button>
+    <div class="form-group row">
+        <label for="marca">marca</label>
+        <input type="text" class="form-control" name="marca" id="marca" value="{{rslt[5]}}">
+    </div>
+    <div class="form-group row">
+        <label for="dimensiones">dimensiones</label>
+        <input type="text" class="form-control" name="dimensiones" id="dimensiones" value="{{rslt[6]}}">
+    </div>
+    <div class="form-group row">
+        <label for="material_que_procesa">material_que_procesa</label>
+        <input type="text" class="form-control" name="material_que_procesa" id="material_que_procesa" value="{{rslt[7]}}">
+    </div>
+    <div class="form-group row">
+        <label for="operacion">operacion</label>
+        <input type="text" class="form-control" name="operacion" id="operacion" value="{{rslt[8]}}">
+    </div>
+    <div class="form-group row">
+        <label for="vendedor">vendedor</label>
+        <input type="text" class="form-control" name="vendedor" id="vendedor" value="{{rslt[9]}}">
+    </div>
+    <div class="form-group row">
+        <label for="potencia">potencia</label>
+        <input type="text" class="form-control" name="potencia" id="potencia" value="{{rslt[10]}}">
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
     <a href="/" class="btn btn-primary">Cancel</a>
 </form>
 </body>
